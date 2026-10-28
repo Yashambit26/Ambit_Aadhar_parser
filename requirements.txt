@@ -1,0 +1,6 @@
+pymupdf
+pillow
+ollama
+pydantic
+openpyxl
+python-dotenv
