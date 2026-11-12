@@ -1,6 +1,6 @@
 pymupdf
 pillow
-ollama
+google-genai
 pydantic
 openpyxl
 python-dotenv

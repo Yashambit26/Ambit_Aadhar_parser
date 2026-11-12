@@ -1,6 +1,6 @@
 import fitz
 
-RENDER_DPI = 300
+RENDER_DPI = 400
 
 
 def render_pdf(path):

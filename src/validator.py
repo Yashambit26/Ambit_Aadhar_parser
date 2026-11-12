@@ -48,7 +48,8 @@ def validate(data):
     label = {name: field.title for name, field in type(data).model_fields.items()}
     issues = [f"{label[f]} missing" for f in REQUIRED_FIELDS if not getattr(data, f)]
 
-    if data.aadhaar_number:
+    # A masked number has no full digits to check.
+    if data.aadhaar_number and not re.fullmatch(r"XXXX XXXX \d{4}", data.aadhaar_number):
         digits = re.sub(r"\D", "", data.aadhaar_number)
         if not re.fullmatch(r"[2-9]\d{11}", digits):
             issues.append("invalid Aadhaar Number format")
